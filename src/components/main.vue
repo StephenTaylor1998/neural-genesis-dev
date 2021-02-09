@@ -1,90 +1,38 @@
 <template>
-  <div>
-    <page :graph-data="graphData"/>
-  </div>
+    <div id="graph"/>
+
 </template>
 
 <script>
-  import page from './core/page'
+    import G6 from "@antv/g6";
+    import G6GraphConfig from './core/config/graph/G6-Graph-default'
+    // test data
+    import TestData from "@/components/data/testdata";
 
-
-  export default {
-    name: 'Main',
-    props: {
-      msg: String
-    },
-    data() {
-      return {
-        graphData: {
-          nodes: [
-            {
-              id: '1',
-              label: 'InputBlock',
-              type: 'rect',
-              style: {
-                rx: 50,
-                ry: 20,
-              },
-            },
-            {
-              id: '2',
-              label: 'Conv2d',
-              type: 'rect',
-              style: {
-                rx: 50,
-                ry: 20,
-              },
-            },
-            {
-              id: '3',
-              label: 'Conv2d',
-              type: 'rect',
-              style: {
-                rx: 50,
-                ry: 20,
-              },
-            },
-            {
-              id: '4',
-              label: 'OutputBlock',
-              type: 'rect',
-              style: {
-                rx: 50,
-                ry: 20,
-              },
-            },
-          ],
-          edges: [
-            {
-              source: '1',
-              target: '2',
-              label: '[32, 3, 28, 28]',
-              type: 'line',
-            },
-            {
-              source: '1',
-              target: '3',
-              label: '[32, 3, 28, 28]',
-              type: 'line',
-            },
-            {
-              source: '2',
-              target: '4',
-              label: '[32, 3, 14, 14]',
-              type: 'line',
-            },
-            {
-              source: '3',
-              target: '4',
-              label: '[32, 3, 14, 14]',
-              type: 'line',
-            },
-          ],
+    export default {
+        name: 'Main',
+        data() {
+            return {
+                graph: null,
+                graphData: TestData,
+                g6GraphConfig: G6GraphConfig,
+            };
         },
-      };
-    },
-    components: {page}
-  }
+        mounted() {
+            this.$nextTick(() => {
+                this.createGraphic();
+            });
+        },
+        beforeDestroy() {
+            this.graph.destroy();
+        },
+        methods: {
+            createGraphic() {
+                this.graph = new G6.Graph(this.g6GraphConfig);
+                this.graph.read(this.graphData);
+            },
+        },
+    }
 </script>
 
 <style scoped>

@@ -1,7 +1,9 @@
 export default {
     container: 'graph',
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window.innerWidth - 40,
+    height: window.innerHeight - 40,
+    // width: 800,
+    // height: 600,
     layout: {
         type: 'dagre',
     },
