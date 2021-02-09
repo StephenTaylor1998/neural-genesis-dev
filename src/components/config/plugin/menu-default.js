@@ -10,8 +10,6 @@ export default {
         <li>测试01</li>
         <li>测试01</li>
         <li>测试01</li>
-        <li>测试01</li>
-        <li>测试01</li>
       </ul>`
         return outDiv
     },
