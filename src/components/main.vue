@@ -61,8 +61,10 @@
 </script>
 
 <style scoped>
-    /*.minimap{*/
-
-    /*}*/
+#minimap {
+    position: fixed;
+    top: 55px;
+    left: 5px;
+}
 
 </style>

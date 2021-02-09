@@ -1,9 +1,9 @@
 import G6 from "@antv/g6";
-import GridConfig from "../../config/plugin/grid-default"
-import MenuConfig from "../../config/plugin/menu-default"
-import MinimapConfig from "../../config/plugin/minimap-default"
-import ToolBarConfig from "../../config/plugin/toolbar-default"
-import ToolTipConfig from "../../config/plugin/tooltip-default"
+import GridConfig from "../../config/plugin/default-grid"
+import MenuConfig from "../../config/plugin/default-menu"
+import MinimapConfig from "../../config/plugin/default-minimap"
+import ToolBarConfig from "../../config/plugin/default-toolbar"
+import ToolTipConfig from "../../config/plugin/default-tooltip"
 
 
 const grid = new G6.Grid(GridConfig);
