@@ -5,7 +5,7 @@
 
 <script>
     import G6 from "@antv/g6";
-    import G6GraphConfig from './core/config/graph/G6-Graph-default'
+    import G6GraphConfig from './config/graph/G6-Graph-default'
     // test data
     import TestData from "@/components/data/testdata";
 
