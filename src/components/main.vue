@@ -4,6 +4,9 @@
 
         <!--  Left Node Panel  -->
 
+        <!--  tool bar  -->
+        <div id="minimap"></div>
+
         <!--  Center Graph  -->
         <div id="graph"/>
 
@@ -15,7 +18,7 @@
 
 <script>
     import G6 from "@antv/g6";
-    import Plugin from "./plugin/default-plugin"
+    import Plugin from "./plugin/plugin-default"
     import G6GraphConfig from './config/graph/G6-Graph-default'
     // test data
     import TestData from "@/components/data/testdata";
@@ -58,5 +61,8 @@
 </script>
 
 <style scoped>
+    /*.minimap{*/
+
+    /*}*/
 
 </style>
