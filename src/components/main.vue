@@ -1,14 +1,15 @@
 <template>
     <div>
         <!--  Navigation Bar  -->
-
+        <div id="navigator"></div>
         <!--  Left Node Panel  -->
-
-        <!--  tool bar  -->
-        <div id="minimap"></div>
+        <ItemPanel></ItemPanel>
 
         <!--  Center Graph  -->
         <div id="graph"/>
+
+        <!--  tool bar  -->
+        <div id="minimap"></div>
 
         <!--  Right cfg Panel  -->
 
@@ -19,7 +20,8 @@
 <script>
     import G6 from "@antv/g6";
     import Plugin from "./plugin/plugin-default"
-    import G6GraphConfig from './config/graph/G6-Graph-default'
+    import G6GraphConfig from "./config/graph/G6-Graph-default"
+    import ItemPanel from "./plugin/item-panel"
     // test data
     import TestData from "@/components/data/testdata";
 
@@ -32,6 +34,9 @@
                 g6GraphConfig: G6GraphConfig,
                 plugins: Plugin.plugins
             };
+        },
+        components: {
+            ItemPanel,
         },
         mounted() {
             this.$nextTick(() => {
@@ -61,10 +66,29 @@
 </script>
 
 <style scoped>
-#minimap {
-    position: fixed;
-    top: 55px;
-    left: 5px;
-}
+    #minimap {
+        position: fixed;
+        top: 55px;
+        left: 5px;
+    }
+
+    #navigator {
+        height: 30px;
+    }
+
+    #graph {
+        margin-left: 200px;
+    }
+
+    #minimap {
+        clear: both; /* 清除浮动元素格式 */
+        position: relative;
+        margin-top: -250px; /* Footer 高度的负值 */
+        height: 203px;
+        width: 203px;
+        left: 200px;
+        border: 3px solid #e2e4e6;
+
+    }
 
 </style>
