@@ -1,12 +1,12 @@
+import Layout from "./layout"
 export default {
     container: 'graph',
-    width: window.innerWidth - 40,
-    height: window.innerHeight - 40,
+    width: window.innerWidth - 210,
+    height: window.innerHeight - 100,
     // width: 800,
     // height: 600,
-    layout: {
-        type: 'dagre',
-    },
+    layout: Layout.Dagre,
+    // layout: Layout.Grid,
     modes: {
         default: ['drag-node', 'drag-canvas', 'zoom-canvas', 'brush-select'],
     },
